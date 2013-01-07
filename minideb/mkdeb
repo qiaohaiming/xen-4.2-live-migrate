@@ -1,0 +1,46 @@
+#!/bin/sh
+#
+# mkdeb: package the dist/install output of a Xen build in a .deb 
+#
+# Takes 2 arguments, the path to the dist directory and the version
+
+set -e
+
+if test -z "$1" -o -z "$2" ; then 
+  echo "usage: $0 path-to-XEN_ROOT xen-version"
+  exit 1
+fi 
+
+cd $1
+version=$2
+if test "$XEN_TARGET_ARCH" = "x86_32"; then
+  arch=i386
+else
+  arch=amd64
+fi
+
+# Prepare the directory to package
+cd dist
+rm -rf deb
+cp -a install deb
+cp -a ../minideb/debian deb/
+
+# Debian doesn't use /usr/lib64 for 64-bit libraries
+if test -d deb/usr/lib64 ; then 
+  cp -a deb/usr/lib64/* deb/usr/lib/
+  rm -rf deb/usr/lib64
+fi
+
+# init directories
+mv deb/etc/init.d/xencommons deb/debian/xen-4.2-mini.xencommons.init
+mv deb/etc/init.d/xen-watchdog deb/debian/xen-4.2-mini.xen-watchdog.init
+
+# Don't want the symlinks to libraries in the package
+# find deb/usr/lib -type l | xargs rm
+
+rm -rf deb/usr/share/doc deb/usr/include
+
+( cd deb ; debuild -us -uc -b)
+
+# Tidy up after ourselves
+#rm -rf deb

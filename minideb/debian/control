@@ -1,0 +1,15 @@
+Source: xen-4.2-mini
+Section: unknown
+Priority: extra
+Maintainer: Alex Bligh <alex@flexiant.com>
+Build-Depends: debhelper (>= 7)
+Standards-Version: 3.8.3
+Homepage: http://www.flexiant.com/
+
+Package: xen-4.2-mini
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Xen 4.2 Hypervisor minipackage
+ Xen 4.2 Hypervisor minipackage
+
+

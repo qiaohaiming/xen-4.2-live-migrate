@@ -1,0 +1,15 @@
+#!/usr/bin/make -f
+export DH_ALWAYS_EXCLUDE=CVS:.svn
+%:
+	dh $@
+
+override_dh_installinit:
+	dh_installinit --update-rcd-params='defaults 70 10' --name=xencommons
+	dh_installinit --update-rcd-params='defaults 21 79' --name=xen-watchdog
+
+#override_dh_shlibdeps:
+#	dh_shlibdeps -X xvpagent-xen4 -X xvpagent-xen3
+
+override_dh_usrlocal:
+
+

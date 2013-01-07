@@ -1,0 +1,43 @@
+Template: xen-4.2-mini/present-extility-licence-1.0
+Type: note
+Description: Extility Licence Agreement
+ PLACEHOLDER PARAGRAPH ONE
+ .
+ PLACEHOLDER PARAGRAPH TWO
+ .
+ PLACEHOLDER PARAGRAPH THREE
+
+Template: xen-4.2-mini/accepted-extility-licence-1.0
+Type: boolean
+Default: false
+Description: Do you accept the licence terms?
+
+Template: xen-4.2-mini/error-extility-licence-1.0
+Type: error
+Description: Licence Rejected
+ If you do not accept this licence you cannot install this software.
+ The installation of this software will be fail and the server will
+ not be usable.
+
+Template: xen-4.2-mini/auth_notice
+Type: note
+Description: Authentication Details
+ We now need the details you registered on the Extility website
+ with. This will be used to fetch your licence information and
+ register this system with out servers.
+
+Template: xen-4.2-mini/extility_username
+Type: string
+Description: Registered Username
+ Please enter the username you registered on the Extility website.
+
+Template: xen-4.2-mini/extility_password
+Type: password
+Description: Registered Password
+ Please enter the password you registered on the Extility website.
+
+Template: xen-4.2-mini/error-userpass
+Type: note
+Description: Incorrect Username or Password
+ The username or password you entered was not recognised on the
+ Extility licence server. Please go back and try again.
