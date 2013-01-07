@@ -194,15 +194,18 @@ endif
 
 ifeq ($(GIT_HTTP),y)
 OVMF_UPSTREAM_URL ?= http://xenbits.xen.org/git-http/ovmf.git
-QEMU_UPSTREAM_URL ?= http://xenbits.xen.org/git-http/qemu-upstream-4.2-testing.git
+# QEMU_UPSTREAM_URL ?= http://xenbits.xen.org/git-http/qemu-upstream-4.2-testing.git
+QEMU_UPSTREAM_URL ?= https://github.com/abligh/qemu-upstream-4.2-testing-livemigrate.git
 SEABIOS_UPSTREAM_URL ?= http://xenbits.xen.org/git-http/seabios.git
 else
 OVMF_UPSTREAM_URL ?= git://xenbits.xen.org/ovmf.git
-QEMU_UPSTREAM_URL ?= git://xenbits.xen.org/qemu-upstream-4.2-testing.git
+#QEMU_UPSTREAM_URL ?= git://xenbits.xen.org/qemu-upstream-4.2-testing.git
+QEMU_UPSTREAM_URL ?= git://github.com/abligh/qemu-upstream-4.2-testing-livemigrate.git
 SEABIOS_UPSTREAM_URL ?= git://xenbits.xen.org/seabios.git
 endif
 OVMF_UPSTREAM_REVISION ?= b0855f925c6e2e0b21fbb03fab4b5fb5b6876871
-QEMU_UPSTREAM_REVISION ?= qemu-xen-4.2.0
+#QEMU_UPSTREAM_REVISION ?= qemu-xen-4.2.0
+QEMU_UPSTREAM_REVISION ?= f07b67a7cdf1147974319db3bfbe7cfb03d383b6
 SEABIOS_UPSTREAM_TAG ?= rel-1.6.3.2
 # Sun Mar 11 09:27:07 2012 -0400
 # Update version to 1.6.3.2
