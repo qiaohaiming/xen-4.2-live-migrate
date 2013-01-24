@@ -1,3 +1,9 @@
+xen-4.2-mini (4.2.0.1) precise; urgency=low
+
+  * Add live migrate support; disable O_DIRECT.
+
+ -- Alex Bligh <amb@DBS>  Thu, 24 Jan 2013 09:55:37 +0000
+
 xen-4.2-mini (4.2.0) unstable; urgency=low
 
   * Initial Release.
